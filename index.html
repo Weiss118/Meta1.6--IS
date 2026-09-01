@@ -30,93 +30,67 @@
 
     <!-- Aquí se integrará el componente FormularioReporteUI (HT-01) -->
 
-    <section id="contenedor-formulario">
+    <form id="form-reporte" class="report-form">
+  <!-- Selector de Categoría -->
+  <div class="form-group">
+    <label for="categoria-reporte">Categoría del problema *</label>
+    <select id="categoria-reporte" required>
+      <option value="" disabled selected>Seleccione una categoría...</option>
+      <option value="Bache">Bache</option>
+      <option value="Alcantarilla dañada">Alcantarilla dañada</option>
+      <option value="Luminaria dañada">Luminaria dañada</option>
+      <option value="Desperfecto en la acera">Desperfecto en la acera</option>
+      <option value="Otro">Otro</option>
+    </select>
+  </div>
 
-      <form id="form-reporte" class="report-form">
+  <!-- Selector Dinámico de Gravedad -->
+  <div id="contenedor-gravedad" class="form-group" hidden>
+    <label for="gravedad-reporte">Nivel de gravedad *</label>
+    <select id="gravedad-reporte" required disabled>
+      <option value="" disabled selected>Primero seleccione una categoría...</option>
+    </select>
+  </div>
 
   <div class="form-group">
-
     <label for="descripcion-reporte">Descripción del problema *</label>
-
-    <textarea
-
-      id="descripcion-reporte"
-
-      placeholder="Ej: Bache profundo en la intersección de..."
-
-      required
-
+    <textarea 
+      id="descripcion-reporte" 
+      placeholder="Ej: Bache profundo en la intersección de..." 
+      required 
       minlength="10"></textarea>
-
   </div>
 
-
-
   <div class="form-group">
-
     <label for="ubicacion-reporte">Ubicación textual</label>
-
-    <input
-
-      type="text"
-
-      id="ubicacion-reporte"
-
+    <input 
+      type="text" 
+      id="ubicacion-reporte" 
       placeholder="Calle, número o referencia">
-
   </div>
-
-
 
   <div class="form-group">
-
     <label for="foto-reporte">Evidencia fotográfica *</label>
-
-    <input
-
-      type="file"
-
-      id="foto-reporte"
-
-      accept="image/*"
-
-      capture="environment"
-
+    <input 
+      type="file" 
+      id="foto-reporte" 
+      accept="image/*" 
+      capture="environment" 
       required>
-
   </div>
-
-
 
   <button type="submit" id="btn-guardar" disabled>Guardar Reporte</button>
-
 </form>
 
-
-
-<!-- Modal de Confirmación (Estructura base) -->
-
+<!-- Modal de Confirmación -->
 <div id="modal-confirmacion" class="modal-overlay" hidden>
-
   <div class="modal-content">
-
     <h3>¡Reporte Guardado!</h3>
-
     <p>Tu reporte ha sido registrado exitosamente.</p>
-
     <p class="folio-texto">Folio: <span id="folio-dinamico"></span></p>
-
     <button id="btn-cerrar-modal">Aceptar</button>
-
   </div>
-
 </div>
-
-    </section>
-
-  </main>
-
-
 
   <footer class="app-footer">
 
