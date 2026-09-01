@@ -1,28 +1,133 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Pulso Ciudadano - PWA</title>
+
   <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
+
   <header class="app-header">
+
     <h1>Pulso Ciudadano</h1>
+
     <p>Reporte anónimo de fallas urbanas</p>
+
   </header>
 
+
+
   <main class="app-content">
+
     <!-- Aquí se integrará el componente FormularioReporteUI (HT-01) -->
+
     <section id="contenedor-formulario">
-      <!-- Generado vía IA en la Fase 1 -->
+
+      <form id="form-reporte" class="report-form">
+
+  <div class="form-group">
+
+    <label for="descripcion-reporte">Descripción del problema *</label>
+
+    <textarea
+
+      id="descripcion-reporte"
+
+      placeholder="Ej: Bache profundo en la intersección de..."
+
+      required
+
+      minlength="10"></textarea>
+
+  </div>
+
+
+
+  <div class="form-group">
+
+    <label for="ubicacion-reporte">Ubicación textual</label>
+
+    <input
+
+      type="text"
+
+      id="ubicacion-reporte"
+
+      placeholder="Calle, número o referencia">
+
+  </div>
+
+
+
+  <div class="form-group">
+
+    <label for="foto-reporte">Evidencia fotográfica *</label>
+
+    <input
+
+      type="file"
+
+      id="foto-reporte"
+
+      accept="image/*"
+
+      capture="environment"
+
+      required>
+
+  </div>
+
+
+
+  <button type="submit" id="btn-guardar" disabled>Guardar Reporte</button>
+
+</form>
+
+
+
+<!-- Modal de Confirmación (Estructura base) -->
+
+<div id="modal-confirmacion" class="modal-overlay" hidden>
+
+  <div class="modal-content">
+
+    <h3>¡Reporte Guardado!</h3>
+
+    <p>Tu reporte ha sido registrado exitosamente.</p>
+
+    <p class="folio-texto">Folio: <span id="folio-dinamico"></span></p>
+
+    <button id="btn-cerrar-modal">Aceptar</button>
+
+  </div>
+
+</div>
+
     </section>
+
   </main>
 
+
+
   <footer class="app-footer">
+
     <p>&copy; 2026 Pulso Ciudadano - Funcionamiento Offline-First</p>
+
   </footer>
 
+
+
   <script src="js/app.js" type="module"></script>
+
 </body>
+
 </html>
