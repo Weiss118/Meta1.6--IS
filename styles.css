@@ -40,6 +40,10 @@
   font-size: 1rem;
 }
 
+.modal-overlay[hidden] {
+  display: none !important;
+}
+
 .report-form textarea {
   min-height: 120px;
   resize: vertical;
